@@ -1,3 +1,4 @@
+"use client";
 import { QRCodeSVG } from "qrcode.react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
