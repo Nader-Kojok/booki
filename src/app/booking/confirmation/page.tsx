@@ -6,9 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faDownload, faShare } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-export default function ConfirmationPage({ searchParams }: { searchParams?: { [key: string]: string | string[] } }) {
-  const bookingId = searchParams?.bookingId as string | undefined;
-  const paymentId = searchParams?.paymentId as string | undefined;
+export default function ConfirmationPage(props: any) {
+  const searchParams = props.searchParams || {};
+  const bookingId = searchParams.bookingId as string | undefined;
+  const paymentId = searchParams.paymentId as string | undefined;
 
   // In a real app, we would fetch the booking details from the API
   const bookingDetails = {

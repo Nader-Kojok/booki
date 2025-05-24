@@ -136,7 +136,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <Header 
-        userName="Amadou"
+        title="Amadou"
         notificationCount={3}
         onSearchClick={handleSearchClick}
       />

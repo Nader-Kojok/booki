@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMobile, faCreditCard, faWave } from "@fortawesome/free-solid-svg-icons";
+import { faMobile, faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 const paymentSchema = z.object({
@@ -116,7 +116,7 @@ export function PaymentForm({ amount, onSuccess, onError }: PaymentFormProps) {
                         />
                       </FormControl>
                       <FormLabel className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
-                        <FontAwesomeIcon icon={faWave} className="h-6 w-6 mb-2" />
+                        <FontAwesomeIcon icon={faMobile} className="h-6 w-6 mb-2" />
                         <span>Wave</span>
                       </FormLabel>
                     </FormItem>

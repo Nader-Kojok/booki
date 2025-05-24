@@ -275,7 +275,6 @@ function BookingPageContent() {
             {/* Step 1: Date Selection */}
             {currentStep === 'date' && (
               <AvailabilityCalendar
-                terrainId={terrainId}
                 selectedDate={selectedDate}
                 onDateSelect={handleDateSelect}
               />
