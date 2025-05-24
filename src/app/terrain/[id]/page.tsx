@@ -10,7 +10,6 @@ import {
   faMapPin, 
   faPhone, 
   faHeart,
-  faClock,
   faUsers,
   faParking,
   faShower,
@@ -22,8 +21,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useParams, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 // Mock terrain data - in real app, this would be fetched based on ID
 const mockTerrain = {
@@ -106,7 +104,6 @@ const mockReviews = [
 ]
 
 export default function TerrainDetailPage() {
-  const params = useParams()
   const router = useRouter()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isFavorite, setIsFavorite] = useState(false)
@@ -157,13 +154,12 @@ export default function TerrainDetailPage() {
 
       <div className="space-y-6">
         {/* Image Gallery */}
-        <div className="relative aspect-video">
-          <Image
-            src={mockTerrain.images[currentImageIndex]}
+        <div className="relative w-full h-64">
+          <Image 
+            src={mockTerrain.images[currentImageIndex]} 
             alt={mockTerrain.name}
             fill
             className="object-cover"
-            priority
           />
           
           {/* Navigation arrows */}
@@ -304,7 +300,7 @@ export default function TerrainDetailPage() {
           {/* Opening Hours */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Horaires d'ouverture</CardTitle>
+              <CardTitle className="text-lg">Horaires d&apos;ouverture</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
@@ -327,10 +323,12 @@ export default function TerrainDetailPage() {
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-4">
-                <img 
+                <Image 
                   src={mockTerrain.owner.avatar} 
                   alt={mockTerrain.owner.name}
-                  className="w-12 h-12 rounded-full object-cover"
+                  width={48}
+                  height={48}
+                  className="rounded-full object-cover"
                 />
                 <div className="flex-1">
                   <h4 className="font-medium text-dark">{mockTerrain.owner.name}</h4>
@@ -355,10 +353,12 @@ export default function TerrainDetailPage() {
               {mockReviews.map((review) => (
                 <div key={review.id} className="border-b border-light-gray pb-4 last:border-b-0">
                   <div className="flex items-start gap-3">
-                    <img 
+                    <Image 
                       src={review.user.avatar} 
                       alt={review.user.name}
-                      className="w-10 h-10 rounded-full object-cover"
+                      width={40}
+                      height={40}
+                      className="rounded-full object-cover"
                     />
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">

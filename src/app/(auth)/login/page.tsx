@@ -203,7 +203,7 @@ export default function LoginPage() {
         <div className="text-center text-xs text-gray-500">
           En vous connectant, vous acceptez nos{" "}
           <Link href="/terms" className="underline">
-            Conditions d'utilisation
+            Conditions d&apos;utilisation
           </Link>{" "}
           et notre{" "}
           <Link href="/privacy" className="underline">

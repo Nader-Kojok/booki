@@ -28,16 +28,16 @@ export default function RootLayout({
       <body className="antialiased bg-background min-h-screen">
         <AuthProvider>
           <ToastProvider>
-            {/* Main App Container */}
-            <div className="flex flex-col min-h-screen">
-              {/* Content Area */}
-              <main className="flex-1 pb-20">
-                {children}
-              </main>
-              
-              {/* Bottom Navigation */}
-              <BottomNavigation />
-            </div>
+          {/* Main App Container */}
+          <div className="flex flex-col min-h-screen">
+            {/* Content Area */}
+            <main className="flex-1 pb-20">
+              {children}
+            </main>
+            
+            {/* Bottom Navigation */}
+            <BottomNavigation />
+          </div>
           </ToastProvider>
         </AuthProvider>
       </body>

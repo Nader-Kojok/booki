@@ -8,10 +8,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
-  faUser, 
   faCalendar, 
   faHeart, 
-  faCog, 
   faPhone, 
   faEnvelope,
   faMapPin,
@@ -25,6 +23,7 @@ import {
 import { Terrain } from '@/types'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 // Mock user data
 const mockUser = {
@@ -245,11 +244,14 @@ export default function ProfilePage() {
               <CardContent className="space-y-4">
                 {mockBookings.slice(0, 2).map((booking) => (
                   <div key={booking.id} className="flex items-center gap-4 p-3 border border-light-gray rounded-lg">
-                    <img 
-                      src={booking.terrain.image} 
-                      alt={booking.terrain.name}
-                      className="w-16 h-16 rounded-lg object-cover"
-                    />
+                    <div className="relative w-16 h-16">
+                      <Image 
+                        src={booking.terrain.image} 
+                        alt={booking.terrain.name}
+                        fill
+                        className="rounded-lg object-cover"
+                      />
+                    </div>
                     <div className="flex-1">
                       <h4 className="font-medium text-dark">{booking.terrain.name}</h4>
                       <p className="text-sm text-gray">{booking.date} • {booking.time}</p>
@@ -270,7 +272,7 @@ export default function ProfilePage() {
                   </div>
                 ))}
                 <Button variant="outline" className="w-full">
-                  Voir tout l'historique
+                  Voir tout l&apos;historique
                 </Button>
               </CardContent>
             </Card>
@@ -287,11 +289,14 @@ export default function ProfilePage() {
                 <div className="grid gap-4">
                   {mockFavorites.slice(0, 1).map((terrain) => (
                     <div key={terrain.id} className="flex items-center gap-4 p-3 border border-light-gray rounded-lg">
-                      <img 
-                        src={terrain.images[0]} 
-                        alt={terrain.name}
-                        className="w-16 h-16 rounded-lg object-cover"
-                      />
+                      <div className="relative w-16 h-16">
+                        <Image 
+                          src={terrain.images[0]} 
+                          alt={terrain.name}
+                          fill
+                          className="rounded-lg object-cover"
+                        />
+                      </div>
                       <div className="flex-1">
                         <h4 className="font-medium text-dark">{terrain.name}</h4>
                         <p className="text-sm text-gray">{terrain.address}</p>
@@ -327,11 +332,14 @@ export default function ProfilePage() {
               <Card key={booking.id}>
                 <CardContent className="p-4">
                   <div className="flex items-center gap-4">
-                    <img 
-                      src={booking.terrain.image} 
-                      alt={booking.terrain.name}
-                      className="w-20 h-20 rounded-lg object-cover"
-                    />
+                    <div className="relative w-20 h-20">
+                      <Image 
+                        src={booking.terrain.image} 
+                        alt={booking.terrain.name}
+                        fill
+                        className="rounded-lg object-cover"
+                      />
+                    </div>
                     <div className="flex-1">
                       <h4 className="font-medium text-dark mb-1">{booking.terrain.name}</h4>
                       <p className="text-sm text-gray mb-2">{booking.terrain.address}</p>

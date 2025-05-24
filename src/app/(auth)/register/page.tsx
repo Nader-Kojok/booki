@@ -101,7 +101,7 @@ export default function RegisterPage() {
                 onClick={() => handleSocialRegister('google')}
               >
                 <FontAwesomeIcon icon={faGoogle} className="w-5 h-5 mr-2 text-red-500" />
-                S'inscrire avec Google
+                S&apos;inscrire avec Google
               </Button>
               
               <Button
@@ -111,7 +111,7 @@ export default function RegisterPage() {
                 onClick={() => handleSocialRegister('facebook')}
               >
                 <FontAwesomeIcon icon={faFacebook} className="w-5 h-5 mr-2 text-blue-600" />
-                S'inscrire avec Facebook
+                S&apos;inscrire avec Facebook
               </Button>
             </div>
 
@@ -312,9 +312,9 @@ export default function RegisterPage() {
                       </FormControl>
                       <div className="space-y-1 leading-none">
                         <FormLabel className="text-sm">
-                          J'accepte les{" "}
+                          J&apos;accepte les{" "}
                           <Link href="/terms" className="text-primary hover:underline">
-                            conditions d'utilisation
+                            conditions d&apos;utilisation
                           </Link>{" "}
                           et la{" "}
                           <Link href="/privacy" className="text-primary hover:underline">

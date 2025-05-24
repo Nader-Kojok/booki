@@ -9,7 +9,7 @@ import {
   faPlus, 
   faCircle
 } from '@fortawesome/free-solid-svg-icons'
-import Link from 'next/link'
+import Image from 'next/image'
 
 // Mock messages data
 const mockMessages = [
@@ -68,10 +68,12 @@ export default function MessagesPage() {
                   <div className="flex items-center gap-3">
                     {/* Avatar */}
                     <div className="relative">
-                      <img 
+                      <Image 
                         src={message.avatar} 
                         alt={message.sender}
-                        className="w-12 h-12 rounded-full object-cover"
+                        width={48}
+                        height={48}
+                        className="rounded-full object-cover"
                       />
                       {message.unread && (
                         <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full border-2 border-white flex items-center justify-center">
@@ -104,7 +106,7 @@ export default function MessagesPage() {
             <CardContent className="p-8 text-center">
               <FontAwesomeIcon icon={faMessage} className="w-16 h-16 text-gray mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-dark mb-2">Aucun message</h3>
-              <p className="text-gray mb-4">Vous n'avez pas encore de conversations.</p>
+              <p className="text-gray mb-4">Vous n&apos;avez pas encore de conversations.</p>
               <Button className="bg-primary hover:bg-primary-dark">
                 <FontAwesomeIcon icon={faPlus} className="w-4 h-4 mr-2" />
                 Commencer une conversation
@@ -116,7 +118,7 @@ export default function MessagesPage() {
         {/* Help Section */}
         <Card className="mt-6">
           <CardContent className="p-4">
-            <h4 className="font-semibold text-dark mb-2">Besoin d'aide ?</h4>
+            <h4 className="font-semibold text-dark mb-2">Besoin d&apos;aide ?</h4>
             <p className="text-sm text-gray mb-3">
               Notre équipe support est disponible pour vous aider.
             </p>
