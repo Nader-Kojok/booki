@@ -6,11 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faDownload, faShare } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-interface PageProps {
-  searchParams?: { [key: string]: string | string[] | undefined }
-}
-
-export default function ConfirmationPage({ searchParams }: PageProps) {
+export default function ConfirmationPage({ searchParams }: { searchParams?: { [key: string]: string | string[] } }) {
   const bookingId = searchParams?.bookingId as string | undefined;
   const paymentId = searchParams?.paymentId as string | undefined;
 
